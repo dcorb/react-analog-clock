@@ -3,6 +3,8 @@ import HourHand from './HourHand';
 import MinuteHand from './MinuteHand';
 import SecondHand from './SecondHand';
 import TimeZone from './TimeZone';
+import DigitalTime from './DigitalTime';
+import calculateRotation from '../logic/calculateRotation';
 
 class AnalogClock extends React.Component {
 
@@ -34,12 +36,13 @@ class AnalogClock extends React.Component {
   render() {
     return (
       <div className="analog-clock">
-        <div className="analog-clock">
-          <HourHand />
-          <MinuteHand />
-          <SecondHand />
+        <div className="analog-clock__face">
+          <HourHand angle={ calculateRotation('hour', this.state.timestamp, this.props.timezone) } />
+          <MinuteHand angle={ calculateRotation('min', this.state.timestamp, this.props.timezone) } />
+          <SecondHand angle={ calculateRotation('sec', this.state.timestamp, this.props.timezone) } />
         </div>
         <TimeZone timezone={this.props.timezone} />
+        <DigitalTime timezone={this.props.timezone} timestamp={this.state.timestamp} />
       </div>
     );
   }
