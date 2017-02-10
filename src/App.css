@@ -8,3 +8,18 @@
   color: white;
 }
 
+/*              Analog clock CSS           */
+/* ======================================= */
+.analog-clock {
+  width:50%;
+  display:inline-block;
+}
+.analog-clock__face {
+  position:relative;
+  width:300px;
+  height:300px;
+  margin:0 auto;
+}
+.analog-clock__handle {
+  position:absolute;
+}
