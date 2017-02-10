@@ -54,7 +54,6 @@ AnalogClock.propTypes = {
 
 AnalogClock.defaultProps = {
   timezone: 'Europe/Zurich',
-  time: new Date(),
 };
 
 export default AnalogClock;
